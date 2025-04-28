@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <span class="material-icons logo-icon">password</span>
+                <h1>Password Manager</h1>
+            </div>
+            <button id="add-btn" class="google-btn">
+                <span class="material-icons">add</span> Add password
+            </button>
+        </header>
+
+        <main class="main-content">
+            <div class="search-container">
+                <div class="search-bar">
+                    <span class="material-icons">search</span>
+                    <input type="text" id="search-input" placeholder="Search passwords...">
+                </div>
+            </div>
+            
+            <div id="password-list-container"></div>
+        </main>
+    </div>
+
+    <!-- Add Password Modal -->
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Password</h2>
+                <span class="close-btn material-icons">close</span>
+            </div>
+            <div id="add-form-container"></div>
+        </div>
+    </div>
+
+    <!-- Edit Password Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Password</h2>
+                <span class="close-btn material-icons">close</span>
+            </div>
+            <div id="edit-form-container"></div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content small">
+            <h2>Delete password?</h2>
+            <p>This action cannot be undone. The password will be permanently removed.</p>
+            <div class="modal-actions">
+                <button id="cancel-delete" class="google-btn secondary">Cancel</button>
+                <button id="confirm-delete" class="google-btn danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="models/PasswordModel.js"></script>
+    <script src="views/ListView.js"></script>
+    <script src="views/AddView.js"></script>
+    <script src="views/EditView.js"></script>
+    <script src="views/DeleteView.js"></script>
+    <script src="controllers/ListController.js"></script>
+    <script src="controllers/AddController.js"></script>
+    <script src="controllers/EditController.js"></script>
+    <script src="controllers/DeleteController.js"></script>
+    <script src="App.js"></script>
+</body>
+</html>
