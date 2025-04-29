@@ -31,12 +31,10 @@ class ListController {
     }
     
     handleEditPassword(id) {
-        // This will be handled by the App controller
         return id;
     }
     
     handleDeletePassword(id) {
-        // This will be handled by the App controller
         return id;
     }
     

@@ -1,7 +1,8 @@
 class AddController {
-    constructor(model, view) {
+    constructor(model, view, listController) {
         this.model = model;
         this.view = view;
+        this.listController = listController;
         
         this.initialize();
     }
@@ -10,7 +11,6 @@ class AddController {
         this.view.render();
         this.setupEventHandlers();
         
-        // Bind the add button in the main UI
         document.getElementById('add-btn').addEventListener('click', () => {
             this.view.clear();
             this.view.show();
@@ -26,7 +26,8 @@ class AddController {
         this.model.addPassword(passwordData);
         this.view.hide();
         this.view.clear();
-        return true; // Notify success to App controller
+        this.listController.displayPasswords(); // Явное обновление списка
+        return true;
     }
     
     handleCloseModal() {

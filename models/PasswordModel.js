@@ -1,7 +1,7 @@
 class PasswordModel {
     constructor() {
         this.STORAGE_KEY = 'googlePasswordManager';
-        this.passwords = this.loadPasswords();
+        this.passwords = this.loadPasswords(); // Загрузка при создании модели
     }
 
     loadPasswords() {
